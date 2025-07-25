@@ -773,8 +773,6 @@
             transform: translateY(-5px);
         }
 
-
-
         /* Enhanced Footer */
         footer {
             background: #1a252f;
@@ -876,7 +874,7 @@
 
         /* WhatsApp */
         .social-link.whatsapp:hover::before {
-            background: #25d366;
+            background: lab(66.97% -23.48 -27.78);
         }
 
         .footer-divider {
@@ -1019,7 +1017,7 @@
         <a href="#about"><i class="fas fa-address-book"></i><span>About</span></a>
         <a href="#projects"><i class="fas fa-project-diagram"></i><span>Projects</span></a>
         <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
-        <a class="mode-toggle" id="modeToggle"><i class="fas fa-moon"></i><span>Dark</span></a>
+        <a class="mode-toggle" id="modeToggle"><ion-icon name="moon-outline"></ion-icon></a>
     </nav>
 
     <section id="home" class="hero">
@@ -1114,16 +1112,13 @@
     </section>
 
     <section id="contact" class="contact fade-in-on-scroll">
-        <h2>Get In Touch</h2>
+        <h2>Get In Touch</h2><br><br>
         <div class="contact-info">
             <div class="contact-item">
                 <span>📧</span>
                 <p>Email: rinilregi@gmail.com</p>
             </div>
-            <div class="contact-item">
-                <span>📱</span>
-                <p>Phone: +91 7356072362</p>
-            </div>
+            
             <div class="contact-item">
                 <span>📍</span>
                 <p>Location: Kerala, IN</p>
@@ -1131,7 +1126,7 @@
         </div>
         <form>
             <br><br><br><br>
-            <p>Let’s connect! Drop me a DM on your favorite platform and I’ll respond when I can.</p>
+            <p>Let's connect! Drop me a DM on your favorite platform and I'll respond when I can.</p>
         </form>
     </section>
 
@@ -1147,8 +1142,9 @@
                 <a href="https://www.instagram.com/apz._.appu?igsh=bzJiY2VhNTAyZ2F1" target="_blank" class="social-link instagram">
                    <ion-icon name="logo-instagram"></ion-icon>
                 </a>
-                <a href="https://wa.me/7356072362" target="_blank" class="social-link whatsapp">
-                   <ion-icon name="logo-whatsapp"></ion-icon>
+                <a href="https://t.me/Rinil_R" target="_blank" class="social-link whatsapp">
+                     <ion-icon name="paper-plane-outline"></ion-icon>
+
                 </a>
             </div>
             <div class="footer-divider"></div>
@@ -1172,16 +1168,11 @@
         const modeToggle = document.getElementById('modeToggle');
         modeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            const icon = modeToggle.querySelector('i');
-            const span = modeToggle.querySelector('span');
+            const icon = modeToggle.querySelector('ion-icon');
             if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                span.textContent = 'Light';
+                icon.setAttribute('name', 'sunny-outline');
             } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                span.textContent = 'Dark';
+                icon.setAttribute('name', 'moon-outline');
             }
         });
 
@@ -1218,8 +1209,6 @@
             });
         });
 
-        
-
         // Add hover effect to project cards
         document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
@@ -1240,8 +1229,6 @@
                 }, 150);
             });
         });
-
-
 
         // Add typing effect to hero text
         function typeWriter(element, text, speed = 100) {
